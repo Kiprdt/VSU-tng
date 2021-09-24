@@ -1,5 +1,7 @@
-a = input("Введите число или слово! :) >>")
-if a == a[::- 1]:
-    print(a, "- Это палиндром!")
-else:
-    print(a, "- Это совсем не палиндром!")
+a = int(input("Введите X:"))
+b = int(input("Введите Y:"))
+sum = 0
+for i in range(a, b + 1):
+    if i % 5 == 0:
+        sum += i
+print(sum)
