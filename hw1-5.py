@@ -12,5 +12,6 @@ elif x == 0 and y > 0 or x == 0 and y < 0:
     print("Точка лежит на оси 'Y' ")
 elif x > 0 and y == 0 or x < 0 and y == 0:
     print("Точка лежит на оси 'X' ")
-elif x == 0 and y == 0:
+else:
+x == 0 and y == 0:
     print("Точка лежит в начале координат")
