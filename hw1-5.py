@@ -13,5 +13,4 @@ elif x == 0 and y > 0 or x == 0 and y < 0:
 elif x > 0 and y == 0 or x < 0 and y == 0:
     print("Точка лежит на оси 'X' ")
 else:
-x == 0 and y == 0:
     print("Точка лежит в начале координат")
