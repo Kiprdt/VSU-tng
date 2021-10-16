@@ -5,6 +5,3 @@ for p in a:
     if p.isdigit():
         new_list.append(p)
 print(new_list[k-1])
-
-
-
