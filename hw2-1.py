@@ -1,9 +1,7 @@
-s = [ ]
+s = []
 st = input("Ввод:")
 s.append(st)
-while st != "":
-    st = input("Ввод:")
+while st != '':
     s.append(st)
-if "" in s:
-    s.remove("")
+    st = input("Ввод:")
 print(s)
