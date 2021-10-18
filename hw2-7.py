@@ -1,4 +1,5 @@
 from random import randint
+
 s = randint(0, 100)
 k = -1
 while k != s:
