@@ -1,12 +1,7 @@
-def func_add():
-    spisok_smth = []
-    add = None
-    while add != "":
-        spisok_smth.append(add)
-        add = input("Введите данные, чтобы закончить просто нажмите 'Enter'. ")
-    for x in set(spisok_smth):    # set() - преобразует в множество, удаляя дубликаты.
-        y = spisok_smth.count(x)
-        print("Элемент - ", x, "\t|""\tЧастота - ", y)
+from hw3-1 import func_add
 
 
-func_add()
+a = func_add()
+for x in set(a):    # set() - преобразует в множество, удаляя дубликаты.
+    y = a.count(x)
+    print("Элемент - ", x, "\t|""\tЧастота - ", y)
