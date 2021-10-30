@@ -4,4 +4,4 @@ def func_add():
     while add != "":
         spisok.append(add)
         add = input("Введите данные, чтобы закончить просто нажмите 'Enter'. ")
-    print(spisok)
+    return spisok
