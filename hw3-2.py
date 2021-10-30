@@ -1,6 +1,6 @@
 def seasons():
     n = int(input("Введите номер месяца:"))
-    for key in months.keys():    # Перебор ключей в словаре.
+    for key in months:    # Перебор ключей в словаре.
         if n in months[key]:    # Соответствие между введённым "n" и ключами.
             print(key)
     else:
