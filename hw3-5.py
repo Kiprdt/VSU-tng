@@ -1,13 +1,7 @@
-def sequence():
-    x = list()
-    n = input()
-    while n != "":
-        x.append(n)
-        n = input()
-    else:
-        x = [float(i) for i in x]    # Преобразуем все элементы списка во float.
-        middle = sum(x) / len(x)
-        print(middle)
+from hw3-1 import func_add
 
 
-sequence()
+x = func_add()
+x = [float(i) for i in x]    # Преобразуем все элементы списка во float.
+middle = sum(x) / len(x)
+print(middle)
