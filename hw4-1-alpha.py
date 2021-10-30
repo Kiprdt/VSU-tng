@@ -1,13 +1,17 @@
 def func_add():
-    spisok = []
-    spisok = list(map(int, spisok))
-    add = input("Введите данные, чтобы закончить просто нажмите 'Enter'. ")
-    while add != "":
-        spisok.append(add)
-        add = input("Введите данные, чтобы закончить просто нажмите 'Enter'. ")
-    k = int(input("Введите сдвиг:"))
-    spisok = spisok[-k:] + spisok[:-k]
-    print(spisok)
+    s = []
+    n = input("Введите данные, чтобы закончить просто нажмите 'Enter'. ")
+    while n != "":
+        s.append(n)
+        n = input("Введите данные, чтобы закончить просто нажмите 'Enter'. ")
+    return s
 
 
-func_add()
+def moving(s, z):
+    s = s[-z:] + s[:-z]
+    return s
+
+
+a = func_add()
+k = int(input("Введите значение для сдвига:"))
+print(moving(a, k))
