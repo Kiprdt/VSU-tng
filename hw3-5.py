@@ -1,4 +1,4 @@
-from hw3-1 import func_add
+from hw31 import func_add
 
 
 def middle_func():
