@@ -1,8 +1,11 @@
 def fibonacci(n1):
-    if n1 in (1, 2):
-        return 1
-    return fibonacci(n1 - 1) + fibonacci(n1 - 2)
+    fib1 = 1
+    fib2 = 1
+    print(fib1, fib2, end=' ')
+    for i in range(2, n):
+        fib1, fib2 = fib2, fib1 + fib2
+        print(fib2, end=' ')
 
 
 n = int(input("Введите номер элемента:"))
-print(fibonacci(n))
+fibonacci(n)
