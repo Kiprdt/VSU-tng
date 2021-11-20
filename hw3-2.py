@@ -5,10 +5,8 @@ def seasons(n):
               "Осень": (9, 10, 11)}
     for key in months:    # Перебор ключей в словаре.
         if n in months[key]:    # Соответствие между введённым "n" и ключами.
-            print(key)
-    else:
-        print("Введено неверное значение. Диапозон = 1 - 12.")
+            return print(key)
 
 
 n = int(input("Введите номер месяца:"))
-seasons()
+seasons(n)
