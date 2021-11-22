@@ -5,10 +5,8 @@ def func(z):
             g = g + 1
     if g == 0:
         return True
-    else:
-        return False
+    return False
 
 
-z = int(input())
-func(z)
-
+z = int(input("Введите число:"))
+print(func(z))
