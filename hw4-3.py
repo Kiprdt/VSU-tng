@@ -3,10 +3,10 @@ def check_sequence(k):
 
 
 def check_sequence_tests():
-    assert check_sequence([1, 1, 2, 2, 3, 4, 5, 6]) == False
-    assert check_sequence([21, 44, 56, 32, 19, 40]) == True
-    assert check_sequence([58, 1009, 2, 1009, 107, 908]) == False
-    assert check_sequence([9, 8, 32, 89, 1, 56]) == True
+    assert check_sequence([1, 1, 2, 2, 3, 4, 5, 6]) is False
+    assert check_sequence([21, 44, 56, 32, 19, 40]) is True
+    assert check_sequence([58, 1009, 2, 1009, 107, 908]) is False
+    assert check_sequence([9, 8, 32, 89, 1, 56]) is True
 
 
 z = [1, 22, 22, 3, 4, 8, 8, 10]
