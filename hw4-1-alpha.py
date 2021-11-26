@@ -8,14 +8,19 @@ def func_add():
 
 
 def moving(s, z):
+    if z > len(s):
+        z = z % len(s)
     s = s[-z:] + s[:-z]
     return s
 
 
 def moving_tests():
-    assert moving([1, 2, 3, 4, 5], 2) == [4, 5, 1, 2, 3]
+    assert moving([1, 2, 3, 4, 5], 7) == [4, 5, 1, 2, 3]
     assert moving([7, 12, 14, 8, 1, 5], 3) == [8, 1, 5, 7, 12, 14]
     assert moving([7, 6, 5, 4, 3, 2, 1], 4) == [4, 3, 2, 1, 7, 6, 5]
+    assert moving([1, 2, 3, 4, 5], 50) == [1, 2, 3, 4, 5]
+    assert moving([1, 2, 3, 4, 5], 47) == [4, 5, 1, 2, 3]
+    assert moving([7, 6, 5, 4, 3, 2, 1], 123) == [4, 3, 2, 1, 7, 6, 5]
 
 
 a = func_add()
