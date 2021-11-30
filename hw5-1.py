@@ -43,7 +43,7 @@ def bin_search_tests():
     assert bin_search([42, 42, 42, 42, 43], 43) == 4
     assert bin_search([41, 42, 42, 42, 42], 41) == 0
     assert bin_search([-2, -2, -1, 0, 1, 2, 2, 2], -1) == 2
-    assert bin_search([-2, -2, -1, 0, 1, 1, 2, 2], 4) == 1
+    assert bin_search([-2, -2, -1, 0, 1, 1, 2, 2], 4) != 1
 
 
 z = [1, 1, 2, 2, 3, 4, 5, 6, 6, 7, 8]
