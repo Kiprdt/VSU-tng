@@ -17,11 +17,7 @@ class Matrix:
                 self.elements = int(input("Ввод - "))
                 self.spisok[-1].append(self.elements)
         else:
-            while len(self.spisok[-1]) != self.column:
-                self.elements = int(input("Ввод - "))
-                self.spisok[-1].append(self.elements)
-            else:
-                return
+            return
 
     def __str__(self):
         string = ""
