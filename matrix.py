@@ -1,8 +1,8 @@
 class Matrix:
-    def __init__(self, line=0, column=0):
+    def __init__(self, line=1, column=1):
         self.line = line
         self.column = column
-        self.spisok = []
+        self.spisok = [[0]]
 
     def input(self):
         self.line = int(input("Введите количество строк - "))
