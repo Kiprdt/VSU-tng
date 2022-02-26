@@ -11,6 +11,8 @@ class Matrix:
         if self.line > 3 or self.column > 3:
             print("Максимальная матрица - 3 x 3")
             exit()
+        else:
+            print("Заполните строки.")
         while len(self.spisok) != self.line:
             self.spisok.append([])
             while len(self.spisok[-1]) != self.column:
@@ -20,12 +22,7 @@ class Matrix:
             return
 
     def __str__(self):
-        string = ""
-        for i in self.spisok:
-            for k in i:
-                string = string + "%s\t" %(k)
-            string = string + "\n"
-        return string
+        return "\n".join(["\t".join(map(str, i)) for i in self.spisok])
 
 
 a = Matrix()
