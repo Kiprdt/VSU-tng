@@ -2,15 +2,17 @@ class Matrix:
     def __init__(self, spisok=None):
         if spisok is None:
             spisok = [[0]]
+        self.line = len(spisok)
+        self.column = len(spisok[0])
         self.spisok = spisok
 
     def input(self):
         self.spisok = []
-        line = int(input("Введите количество строк - "))
-        column = int(input("Введите количество столбцов - "))
-        for _ in range(line):
+        self.line = int(input("Введите количество строк - "))
+        self.column = int(input("Введите количество столбцов - "))
+        for _ in range(self.line):
             self.spisok.append([])
-            for _ in range(column):
+            for _ in range(self.column):
                 x = int(input("Ввод - "))
                 self.spisok[-1].append(x)
 
