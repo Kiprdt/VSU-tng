@@ -26,6 +26,26 @@ class Matrix:
                 newmatrix.spisok[-1].append(x)
         return newmatrix
 
+    def __sub__(self, other):
+        newmatrix = Matrix()
+        newmatrix.spisok = []
+        for i in range(self.line):
+            newmatrix.spisok.append([])
+            for j in range(self.column):
+                x = self.spisok[i][j] - other.spisok[i][j]
+                newmatrix.spisok[-1].append(x)
+        return newmatrix
+
+    def __rmul__(self, other):
+        newmatrix = Matrix()
+        newmatrix.spisok = []
+        for i in range(self.line):
+            newmatrix.spisok.append([])
+            for j in range(self.column):
+                x = self.spisok[i][j] * other
+                newmatrix.spisok[-1].append(x)
+        return newmatrix
+    
     def __mul__(self, other):
         if self.column == other.line:
             newmatrix = Matrix()
