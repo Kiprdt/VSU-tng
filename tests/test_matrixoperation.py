@@ -61,6 +61,19 @@ def test_rmul(f1, f2, f3):
     print(b * a)
     assert a * b == Matrix(f3)
     assert b * a == Matrix(f3)
+    
+    
+ @pytest.mark.parametrize(('f1', 'f2', 'f3'), [
+    ([[0, 10], [-3, 1]], 4, [[0, 2.5], [-0.75, 0.25]]),
+    ([[1, 2], [3, 4]], 5, [[0.2, 0.4], [0.6, 0.8]]),
+    ([[1, 2], [3, 4]], 1, [[1, 2], [3, 4]])
+
+])
+def test_truediv(f1, f2, f3):
+    a = Matrix(f1)
+    b = f2
+    print(b * a)
+    assert a / b == Matrix(f3)
 
 
 
