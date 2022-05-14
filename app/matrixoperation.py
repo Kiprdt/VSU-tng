@@ -6,6 +6,10 @@ class Matrix:
         self.column = len(spisok[0])
         self.spisok = spisok
 
+    @classmethod
+    def from_list(cls, spisok):
+        return cls(spisok)
+
     def input(self):
         self.spisok = []
         self.line = int(input("Введите количество строк - "))
@@ -16,41 +20,53 @@ class Matrix:
                 x = int(input("Ввод - "))
                 self.spisok[-1].append(x)
 
+    def __eq__(self, other):
+        if self.line == len(other.spisok):
+            count = 0
+            for i in range(self.line):
+                for k in range(self.column):
+                    if self.spisok[i][k] == other.spisok[i][k]:
+                        continue
+                    else:
+                        count += 1
+                if count == 0:
+                    return self.spisok == other.spisok
+                else:
+                    return False
+        else:
+            return False
+
     def __add__(self, other):
-        newmatrix = Matrix()
-        newmatrix.spisok = []
+        newspisok = []
         for i in range(self.line):
-            newmatrix.spisok.append([])
+            newspisok.append([])
             for j in range(self.column):
                 x = self.spisok[i][j] + other.spisok[i][j]
-                newmatrix.spisok[-1].append(x)
-        return newmatrix
+                newspisok[-1].append(x)
+        return Matrix.from_list(newspisok)
 
     def __sub__(self, other):
-        newmatrix = Matrix()
-        newmatrix.spisok = []
+        newspisok = []
         for i in range(self.line):
-            newmatrix.spisok.append([])
+            newspisok.append([])
             for j in range(self.column):
                 x = self.spisok[i][j] - other.spisok[i][j]
-                newmatrix.spisok[-1].append(x)
-        return newmatrix
+                newspisok[-1].append(x)
+        return Matrix.from_list(newspisok)
 
     def __rmul__(self, other):
-        newmatrix = Matrix()
-        newmatrix.spisok = []
+        newspisok = []
         for i in range(self.line):
-            newmatrix.spisok.append([])
+            newspisok.append([])
             for j in range(self.column):
                 x = self.spisok[i][j] * other
-                newmatrix.spisok[-1].append(x)
-        return newmatrix
+                newspisok[-1].append(x)
+        return Matrix.from_list(newspisok)
     
-    def __mul__(self, other):
+    def mul_tion(self, other):
         if self.column == other.line:
-            newmatrix = Matrix()
             tempmatrix = []
-            newmatrix.spisok = []
+            newmatrix = []
             x = 0
             for i in range(self.line):
                 for j in range(other.column):
@@ -58,27 +74,22 @@ class Matrix:
                         x += self.spisok[i][k] * other.spisok[k][j]
                     tempmatrix.append(x)
                     x = 0
-                newmatrix.spisok.append(tempmatrix)
+                newmatrix.append(tempmatrix)
                 tempmatrix = []
-            return newmatrix
+            return Matrix.from_list(newmatrix)
         raise ValueError("Перемножать можно только согласованные матрицы")
 
+    def __mul__(self, other):
+        if isinstance(self, Matrix) and isinstance(other, Matrix):
+            return self.mul_tion(other)
+        elif isinstance(self, Matrix) and isinstance(other, int):
+            return self.__rmul__(other)
+        elif isinstance(self, int) and isinstance(other, Matrix):
+            return other.__rmul__(self)
+        return False
 
     def __str__(self):
         return "\n".join(["\t".join(map(str, i)) for i in self.spisok])
 
-
-# b = Matrix3x3()
-# b.input()
-# print(b)
-# print(b.determinant())
-
-a = Matrix([[1, 2], [3, 4]])
-b = Matrix([[5, 6], [7, 8]])
-c = a + b
-print(c)
-d = a * b
-print(d)
-
-
-
+    def __repr__(self):
+        return str(self)
