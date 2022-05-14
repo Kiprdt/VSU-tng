@@ -88,6 +88,18 @@ class Matrix:
             return other.__rmul__(self)
         return False
 
+    def __truediv__(self, other):
+        if other != 0:
+            newspisok = []
+            for i in range(self.line):
+                newspisok.append([])
+                for j in range(self.column):
+                    x = self.spisok[i][j] / other
+                    newspisok[-1].append(x)
+            return Matrix.from_list(newspisok)
+        else:
+            raise ValueError('На ноль делить нельзя!')
+
     def __str__(self):
         return "\n".join(["\t".join(map(str, i)) for i in self.spisok])
 
