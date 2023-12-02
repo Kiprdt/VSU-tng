@@ -1,6 +1,5 @@
 import math
 import random
-import gmpy2
 
 
 class RSA:
