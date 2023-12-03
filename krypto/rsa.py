@@ -1,5 +1,6 @@
 import math
 import random
+import gmpy2
 
 
 class RSA:
@@ -9,27 +10,25 @@ class RSA:
         self.q = q
         self.e = e
 
-    # these methods are useless
-    @staticmethod
-    def is_prime(number):
-        if number <= 1:
-            return False
-        for i in range(2, (number // 2) + 1):
-            if number % i == 0:
-                return False
-        return True
-
-    @staticmethod
-    def generate_prime():
-        while True:
-            p = random.randint(2**2, 2**5)
-            q = random.randint(2**2, 2**5)
-            phi = (p - 1) * (q - 1)
-            e = random.randint(3, phi)
-            if q < p < 2 * q and RSA.is_prime(p) and RSA.is_prime(q) and math.gcd(e, (p - 1) * (q-1)) == 1:
-                break
-        return q, p, e
-    # end of useless
+    # @staticmethod
+    # def is_prime(number):
+    #     if number <= 1:
+    #         return False
+    #     for i in range(2, (number // 2) + 1):
+    #         if number % i == 0:
+    #             return False
+    #     return True
+    #
+    # @staticmethod
+    # def generate_prime():
+    #     while True:
+    #         p = random.randint(2**2, 2**5)
+    #         q = random.randint(2**2, 2**5)
+    #         phi = (p - 1) * (q - 1)
+    #         e = random.randint(3, phi)
+    #         if q < p < 2 * q and RSA.is_prime(p) and RSA.is_prime(q) and math.gcd(e, (p - 1) * (q-1)) == 1:
+    #             break
+    #     return q, p, e
 
     def key_generate(self):
         n = self.p * self.q
